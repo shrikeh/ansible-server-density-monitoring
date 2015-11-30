@@ -1,0 +1,81 @@
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    server_density_monitoring_nodes_no_log: yes
+  roles:
+    - { role: '../../' }
+
+- hosts: local
+  gather_facts: no
+  tasks:
+    - add_host:
+        groups: test
+        name: "{{ lookup('env','TEST_ANSIBLE_HOSTNAME') }}"
+        ansible_connection: "{{ lookup('env','TEST_ANSIBLE_CONNECTION') }}"
+        ansible_ssh_port: "{{ test_host_ssh_port | default('22') }}"
+
+- hosts: test
+  gather_facts: no
+  vars:
+    server_density_support_page_monitoring_url: 'https://support.serverdensity.com/hc/en-us/articles/201091476-Monitoring-node-locations-and-IP-addresses'
+    server_density_ips_temp_file: "{{ lookup('env', 'TEST_TEMP_FILE' )}}"
+    server_density_ips_parse_script: 'parse_sd_ips.sh'
+    sd_monitoring_locations:
+      - syd
+      - vdl-edi
+      - fra-edi
+      - lon
+    sd_monitoring_countries:
+      - "{{ server_density_monitoring_node_country_gbr }}"
+      - "{{ server_density_monitoring_node_country_usa }}"
+  roles:
+    - { role: '../../' }
+  post_tasks:
+    - name: Get the remote list of IPs direct from the Server Density article
+      uri:
+        url: "{{ server_density_support_page_monitoring_url }}"
+        return_content: yes
+        method: GET
+        dest: "{{ server_density_ips_temp_file }}"
+      register: server_density_support_page_monitoring
+      run_once: yes
+
+    - name: Grep the contents of the temp file
+      script: "{{ server_density_ips_parse_script }} --file {{ server_density_ips_temp_file }}"
+      register: server_density_parsed_ips
+      run_once: yes
+
+    - name: Normalize the IPs
+      debug:
+        msg: "{{ item }}"
+      register: server_density_monitoring_nodes_ips
+      no_log: yes
+      with_flattened: "{{ server_density_monitoring_nodes.values() | map(attribute='ips') | list }}"
+
+    - name: Test against the list
+      debug:
+        msg: "{{ server_density_monitoring_nodes_ips.results | map(attribute='item') | list | symmetric_difference(server_density_parsed_ips.stdout_lines) }}"
+      register: server_density_test_ips
+      no_log: yes
+
+    - name: debug
+      debug:
+        var: server_density_test_ips.msg
+      no_log: yes
+
+    - name: Fail if this list is wrong
+      fail:
+        msg: "List of IPs does not match: {{ server_density_test_ips.msg }}"
+      when: server_density_test_ips.msg
+
+    - name: Get all IPs from the list of keys specified in sd_monitoring_locations
+      debug:
+        msg: "{{ server_density_monitoring_nodes[item].ips | join(',') }}"
+      with_items: sd_monitoring_locations
+
+    - name: Get all UK and US locations
+      debug:
+        msg: "{{ item.value.location }}: {{ item.value.ips | join(', ') }}"
+      with_dict: server_density_monitoring_nodes
+      when: item.value.country is defined and item.value.country in sd_monitoring_countries

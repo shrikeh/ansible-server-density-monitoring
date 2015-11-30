@@ -1,0 +1,8 @@
+---
+- name: Populate the list of monitoring nodes
+  local_action:
+    module: set_fact
+    server_density_monitoring_nodes: "{{ server_density_monitoring_nodes }}"
+  run_once: "{{ server_density_monitoring_nodes_run_once }}"
+  no_log: "{{ server_density_monitoring_nodes_no_log | default(omit) }}"
+...

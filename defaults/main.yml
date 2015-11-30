@@ -1,0 +1,346 @@
+---
+server_density_monitoring_nodes_run_once: yes
+
+server_density_monitoring_nodes_syd_ips:
+  - 54.253.115.57
+  - 54.253.115.95
+
+server_density_monitoring_nodes_syd:
+  location: 'Sydney'
+  country: "{{ server_density_monitoring_node_country_aus }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_syd_ips }}"
+
+server_density_monitoring_nodes_spa_ips:
+  - 54.232.89.44
+  - 54.232.89.51
+
+server_density_monitoring_nodes_spa:
+  location: 'São Paulo'
+  country: "{{ server_density_monitoring_node_country_bra }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_spa_ips }}"
+
+
+server_density_monitoring_nodes_vdl_edi_ips:
+  - 37.235.52.70
+  - 37.235.52.196
+
+server_density_monitoring_nodes_vdl_edi:
+  location: 'Vina del Mar'
+  country: "{{ server_density_monitoring_node_country_chl }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_vdl_edi_ips }}"
+
+server_density_monitoring_nodes_sha_cvh_ips:
+  - 120.26.119.191
+  - 121.41.93.88
+
+server_density_monitoring_nodes_sha_cvh:
+  location: 'Hangzhou (Shanghai)'
+  country: "{{ server_density_monitoring_node_country_chn }}"
+  provider: "{{ server_density_monitoring_node_provider_cvh }}"
+  ips: "{{ server_density_monitoring_nodes_sha_cvh_ips }}"
+
+server_density_monitoring_nodes_par_edi_ips:
+  - 151.236.21.35
+  - 151.236.21.87
+
+server_density_monitoring_nodes_par_edi:
+  location: 'Paris'
+  country: "{{ server_density_monitoring_node_country_fra }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_par_edi_ips }}"
+
+
+server_density_monitoring_nodes_fra_edi_ips:
+  - 149.154.159.21
+  - 151.236.15.26
+
+server_density_monitoring_nodes_fra_edi:
+  location: 'Frankfurt'
+  country: "{{ server_density_monitoring_node_country_deu }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_fra_edi_ips }}"
+
+server_density_monitoring_nodes_hkg_edi_ips:
+  - 158.255.208.86
+  - 151.236.20.95
+
+server_density_monitoring_nodes_hkg_edi:
+  location: 'Hong Kong'
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_hkg_edi_ips }}"
+
+
+server_density_monitoring_nodes_ice_edi_ips:
+    - 151.236.24.35
+    - 151.236.24.50
+
+server_density_monitoring_nodes_ice_edi:
+    location: 'Reykjavik'
+    country: "{{ server_density_monitoring_node_country_isl }}"
+    provider: "{{ server_density_monitoring_node_provider_edis }}"
+    ips: "{{ server_density_monitoring_nodes_ice_edi_ips }}"
+
+server_density_monitoring_nodes_dub_ips:
+  - 46.137.173.156
+  - 46.137.181.155
+
+server_density_monitoring_nodes_dub:
+  location: 'Dublin'
+  country: "{{ server_density_monitoring_node_country_irl }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_dub_ips }}"
+
+
+server_density_monitoring_nodes_mil_edi_ips:
+  - 149.154.157.239
+  - 151.236.18.167
+
+server_density_monitoring_nodes_mil_edi:
+  location: 'Milan'
+  country: "{{ server_density_monitoring_node_country_ita }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_mil_edi_ips }}"
+
+server_density_monitoring_nodes_osa_azr_ips:
+  - 138.91.21.16
+  - 138.91.20.103
+
+server_density_monitoring_nodes_osa_azr:
+  location: 'Osaka'
+  country: "{{ server_density_monitoring_node_country_jpn }}"
+  provider: "{{ server_density_monitoring_node_provider_azr }}"
+  ips: "{{ server_density_monitoring_nodes_osa_azr_ips }}"
+
+
+server_density_monitoring_nodes_tyo_ips:
+  - 176.32.95.65
+  - 176.32.95.72
+
+server_density_monitoring_nodes_tyo:
+  location: 'Tokyo'
+  country: "{{ server_density_monitoring_node_country_jpn }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_tyo_ips }}"
+
+
+server_density_monitoring_nodes_tyo_lin_ips:
+  - 106.186.123.232
+  - 106.186.124.254
+
+server_density_monitoring_nodes_tyo_lin:
+  location: 'Tokyo'
+  country: "{{ server_density_monitoring_node_country_jpn }}"
+  provider: "{{ server_density_monitoring_node_provider_lin }}"
+  ips: "{{ server_density_monitoring_nodes_tyo_lin_ips }}"
+
+
+server_density_monitoring_nodes_ams_edi_ips:
+  - 151.236.14.231
+  - 151.236.14.238
+
+server_density_monitoring_nodes_ams_edi:
+  location: 'Amsterdam'
+  country: "{{ server_density_monitoring_node_country_nld }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_ams_edi_ips }}"
+
+
+server_density_monitoring_nodes_sng_ips:
+  - 46.137.255.105
+  - 46.137.255.121
+
+server_density_monitoring_nodes_sng:
+  location: 'Singapore'
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_sng_ips }}"
+
+
+server_density_monitoring_nodes_jhb_elh_ips:
+  - 196.46.185.86
+  - 196.46.185.122
+
+server_density_monitoring_nodes_jhb_elh:
+  location: 'Johannesburg'
+  country: "{{ server_density_monitoring_node_country_zaf }}"
+  provider: "{{ server_density_monitoring_node_provider_elh }}"
+  ips: "{{ server_density_monitoring_nodes_jhb_elh_ips }}"
+
+
+server_density_monitoring_nodes_mad_edi_ips:
+  - 151.236.23.78
+  - 151.236.23.142
+
+server_density_monitoring_nodes_mad_edi:
+  location: 'Madrid'
+  country: "{{ server_density_monitoring_node_country_esp }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_mad_edi_ips }}"
+
+server_density_monitoring_nodes_sto_edi_ips:
+  - 46.246.93.179
+  - 46.246.126.136
+
+server_density_monitoring_nodes_sto_edi:
+  location: 'Stockholm'
+  country: "{{ server_density_monitoring_node_country_swe }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_sto_edi_ips }}"
+
+
+server_density_monitoring_nodes_msk_edi_ips:
+  - 213.183.56.71
+  - 213.183.56.187
+
+server_density_monitoring_nodes_msk_edi:
+  location: 'Moscow'
+  country: "{{ server_density_monitoring_node_country_rus }}"
+  provider: "{{ server_density_monitoring_node_provider_edis }}"
+  ips: "{{ server_density_monitoring_nodes_msk_edi_ips }}"
+
+server_density_monitoring_nodes_man_34s_ips:
+  - 80.82.115.231
+  - 80.82.115.189
+
+server_density_monitoring_nodes_man_34s:
+  location: 'Manchester'
+  country: "{{ server_density_monitoring_node_country_gbr }}"
+  provider: "{{ server_density_monitoring_node_provider_34s }}"
+  ips: "{{ server_density_monitoring_nodes_man_34s_ips }}"
+
+
+server_density_monitoring_nodes_lon_lin:
+  location: 'London'
+  country: "{{ server_density_monitoring_node_country_gbr }}"
+  provider: "{{ server_density_monitoring_node_provider_lin }}"
+  ips:
+    - 88.80.185.199
+    - 212.71.237.207
+
+server_density_monitoring_nodes_lon_ips:
+  - 95.138.170.88
+  - 95.138.175.4
+
+server_density_monitoring_nodes_lon:
+  location: 'London'
+  country: "{{ server_density_monitoring_node_country_gbr }}"
+  provider: "{{ server_density_monitoring_node_provider_rsc }}"
+  ips: "{{ server_density_monitoring_nodes_lon_ips }}"
+
+
+server_density_monitoring_nodes_chi_ips:
+  - 23.253.20.207
+  - 23.253.22.201
+
+server_density_monitoring_nodes_chi:
+  location: 'Chicago'
+  country: "{{ server_density_monitoring_node_country_usa }}"
+  provider: "{{ server_density_monitoring_node_provider_rsc }}"
+  ips: "{{ server_density_monitoring_nodes_chi_ips }}"
+
+
+server_density_monitoring_nodes_fre_lin_ips:
+  - 45.33.46.28
+  - 45.33.58.27
+
+server_density_monitoring_nodes_fre_lin:
+  location: 'Fremont'
+  country: "{{ server_density_monitoring_node_country_usa }}"
+  provider: "{{ server_density_monitoring_node_provider_lin }}"
+  ips: "{{ server_density_monitoring_nodes_fre_lin_ips }}"
+
+
+server_density_monitoring_nodes_nyc_ovi_ips:
+  - 64.34.61.22
+  - 64.34.61.24
+
+server_density_monitoring_nodes_nyc_ovi:
+  location: 'New York'
+  country: "{{ server_density_monitoring_node_country_usa }}"
+  provider: "{{ server_density_monitoring_node_provider_ovi }}"
+  ips: "{{ server_density_monitoring_nodes_nyc_ovi_ips }}"
+
+
+server_density_monitoring_nodes_nca_ips:
+  - 50.18.45.196
+  - 50.18.50.202
+
+server_density_monitoring_nodes_nca:
+  location: 'Northern California'
+  country: "{{ server_density_monitoring_node_country_usa }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_nca_ips }}"
+
+server_density_monitoring_nodes_vir_ips:
+  - 50.16.217.89
+  - 50.17.242.31
+
+server_density_monitoring_nodes_vir:
+  location: 'Virginia'
+  country: "{{ server_density_monitoring_node_country_usa }}"
+  provider: "{{ server_density_monitoring_node_provider_aws }}"
+  ips: "{{ server_density_monitoring_nodes_vir_ips }}"
+
+server_density_monitoring_nodes:
+  syd:      "{{ server_density_monitoring_nodes_syd }}"
+  spa:      "{{ server_density_monitoring_nodes_spa}}"
+  vdl-edi:  "{{ server_density_monitoring_nodes_vdl_edi}}"
+  sha-cvh:  "{{ server_density_monitoring_nodes_sha_cvh}}"
+  par-edi:  "{{ server_density_monitoring_nodes_par_edi }}"
+  fra-edi:  "{{ server_density_monitoring_nodes_fra_edi }}"
+  hkg-edi:  "{{ server_density_monitoring_nodes_hkg_edi }}"
+  ice-edi:  "{{ server_density_monitoring_nodes_ice_edi }}"
+  dub:      "{{ server_density_monitoring_nodes_dub }}"
+  mil-edi:  "{{ server_density_monitoring_nodes_mil_edi }}"
+  osa-azr:  "{{ server_density_monitoring_nodes_osa_azr }}"
+  tyo:      "{{ server_density_monitoring_nodes_tyo }}"
+  tyo-lin:  "{{ server_density_monitoring_nodes_tyo_lin }}"
+  ams-edi:  "{{ server_density_monitoring_nodes_ams_edi }}"
+  sng:      "{{ server_density_monitoring_nodes_sng }}"
+  jhb-elh:  "{{ server_density_monitoring_nodes_jhb_elh }}"
+  mad-edi:  "{{ server_density_monitoring_nodes_mad_edi }}"
+  sto-edi:  "{{ server_density_monitoring_nodes_sto_edi }}"
+  msk-edi:  "{{ server_density_monitoring_nodes_msk_edi }}"
+  man-34s:  "{{ server_density_monitoring_nodes_man_34s }}"
+  lon-lin:  "{{ server_density_monitoring_nodes_lon_lin }}"
+  lon:      "{{ server_density_monitoring_nodes_lon }}"
+  chi:      "{{ server_density_monitoring_nodes_chi }}"
+  fre-lin:  "{{ server_density_monitoring_nodes_fre_lin }}"
+  nyc-ovi:  "{{ server_density_monitoring_nodes_nyc_ovi }}"
+  nca:      "{{ server_density_monitoring_nodes_nca }}"
+  vir:      "{{ server_density_monitoring_nodes_vir }}"
+
+
+# These variables just stop silly typo errors from repetition
+server_density_monitoring_node_provider_34s:  '34sp'
+server_density_monitoring_node_provider_aws:  'Amazon Web Services'
+server_density_monitoring_node_provider_azr:  'Azure'
+server_density_monitoring_node_provider_cvh:  'China VPS Hosting'
+server_density_monitoring_node_provider_edis: 'EDIS GmbH'
+server_density_monitoring_node_provider_elh:  'Elitehost'
+server_density_monitoring_node_provider_lin:  'Linode'
+server_density_monitoring_node_provider_ovi:  'Open Virtuals'
+server_density_monitoring_node_provider_rsc:  'Rackspace Cloud'
+
+# I went with ISO_3166-1_alpha-3 for country codes (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3).
+# You can use these as well when filtering (see the examples)
+server_density_monitoring_node_country_aus: 'Australia'
+server_density_monitoring_node_country_bra: 'Brazil'
+server_density_monitoring_node_country_chl: 'Chile'
+server_density_monitoring_node_country_chn: 'China'
+server_density_monitoring_node_country_deu: 'Germany'
+server_density_monitoring_node_country_esp: 'Spain'
+server_density_monitoring_node_country_fra: 'France'
+server_density_monitoring_node_country_gbr: 'UK'
+server_density_monitoring_node_country_irl: 'Ireland'
+server_density_monitoring_node_country_isl: 'Iceland'
+server_density_monitoring_node_country_ita: 'Italy'
+server_density_monitoring_node_country_jpn: 'Japan'
+server_density_monitoring_node_country_nld: 'Netherlands'
+server_density_monitoring_node_country_rus: 'Russia'
+server_density_monitoring_node_country_swe: 'Sweden'
+server_density_monitoring_node_country_usa: 'USA'
+server_density_monitoring_node_country_zaf: 'South Africa'
+...
