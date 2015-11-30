@@ -15,6 +15,7 @@ function sd_parse_urls {
     esac
     shift # past argument or value
   done
+  # output the file and grep it as per the docs.
   cat "${SD_TEMP_FILE}" | grep '"ip">' | awk 'BEGIN { FS = ">" }; { print $2 }' | awk 'BEGIN { FS = "<" }; { print $1 }'
   return;
 }
