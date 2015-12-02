@@ -2,22 +2,6 @@
 - hosts: all
   gather_facts: no
   vars:
-    server_density_monitoring_nodes_no_log: yes
-  roles:
-    - { role: '../../' }
-
-- hosts: local
-  gather_facts: no
-  tasks:
-    - add_host:
-        groups: test
-        name: "{{ lookup('env','TEST_ANSIBLE_HOSTNAME') }}"
-        ansible_connection: "{{ lookup('env','TEST_ANSIBLE_CONNECTION') }}"
-        ansible_ssh_port: "{{ test_host_ssh_port | default('22') }}"
-
-- hosts: test
-  gather_facts: no
-  vars:
     server_density_monitoring_support_page_url: 'https://support.serverdensity.com/hc/en-us/articles/201091476-Monitoring-node-locations-and-IP-addresses'
     server_density_ips_temp_file: "{{ lookup('env', 'TEST_TEMP_FILE' )}}"
     server_density_ips_parse_script: 'parse_sd_ips.sh'

@@ -23,15 +23,15 @@ env:
       TEST_ANSIBLE_CONNECTION: local
   matrix:
     - PIP_ANSIBLE_VERSION: "'>=1.9,<2.0'"
-    - PIP_ANSIBLE_VERSION: "'>=2.0'"
+    - PIP_ANSIBLE_VERSION: "'>=2.0' --pre"
 
 install:
     - pip install --upgrade pip
-    - pip install httplib2 netaddr
+    - pip install -r requirements.txt
     - pip install "ansible $PIP_ANSIBLE_VERSION"
 script:
   - ansible-playbook --version
   - export TEST_TEMP_FILE=`mktemp /tmp/config.XXXXXXXXXX`
   - ansible-playbook --syntax-check -i test/inventory test/playbook.yml
-  - ansible-playbook  -i test/inventory -l local test/playbook.yml --connection=local -vvvv
+  - ansible-playbook  -i test/inventory -l travis test/playbook.yml --connection=local -vvvv
 ...

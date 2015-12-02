@@ -2,5 +2,5 @@
 *.bat  eol=crlf
 
 /test export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
+requirements.txt export-ignore
+.* export-ignore
