@@ -28,7 +28,7 @@ env:
 install:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - pip install "ansible --pre $PIP_ANSIBLE_VERSION"
+    - pip install --pre "ansible $PIP_ANSIBLE_VERSION"
 script:
   - ansible-playbook --version
   - export TEST_TEMP_FILE=`mktemp /tmp/config.XXXXXXXXXX`
