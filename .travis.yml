@@ -14,7 +14,7 @@ addons:
 
 matrix:
   allow_failures:
-    - env: PIP_ANSIBLE_VERSION='>=2.0' PIP_OPTIONS="--pre"
+    - env: PIP_ANSIBLE_VERSION='>=2.0'
   fast_finish: true
 
 env:
@@ -23,14 +23,12 @@ env:
       TEST_ANSIBLE_CONNECTION: local
   matrix:
     - PIP_ANSIBLE_VERSION: "'>=1.9,<2.0'"
-      PIP_OPTIONS: ""
     - PIP_ANSIBLE_VERSION: "'>=2.0'"
-      PIP_OPTIONS: "--pre"
 
 install:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - pip install $PIP_OPTIONS "ansible $PIP_ANSIBLE_VERSION"
+    - pip install "ansible --pre $PIP_ANSIBLE_VERSION"
 script:
   - ansible-playbook --version
   - export TEST_TEMP_FILE=`mktemp /tmp/config.XXXXXXXXXX`
